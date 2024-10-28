@@ -28,6 +28,7 @@ requirements:
     - dash-ag-grid >=31
     - pandas
     - pydantic ==2.*
+    - fsspec
 
 test:
   imports:
