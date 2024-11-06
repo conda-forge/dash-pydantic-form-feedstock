@@ -1,13 +1,14 @@
 {% set name = "dash-pydantic-form" %}
-{% set version = "0.8.1" %}
+{% set version = "0.8.2" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz
-  sha256: 5f73e125f6aba9dc30178e6706646d905a7b524580d846dcf660c056a2cf952a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz
+  sha256: f9948b82a60cef58b8c261a5d7a514d224b71a0c6029e776925f2002e0cb02bb
 
 build:
   noarch: python
@@ -16,12 +17,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10,<3.13
+    - python {{ python_min }}.*
     - setuptools >=67
     - setuptools-scm >=7.1
     - pip
   run:
-    - python >=3.10,<3.13
+    - python >={{ python_min }},<3.13
     - dash >=2.16
     - dash-mantine-components >=0.14.5
     - dash-iconify
@@ -29,6 +30,8 @@ requirements:
     - pandas
     - pydantic ==2.*
     - fsspec
+    # For some reason the below is not picked up from Dash's deps
+    - Werkzeug <3.1
 
 test:
   imports:
@@ -36,6 +39,7 @@ test:
   commands:
     - pip check
   requires:
+    - python ={{ python_min }}
     - pip
 
 about:
