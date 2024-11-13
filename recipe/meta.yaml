@@ -1,5 +1,5 @@
 {% set name = "dash-pydantic-form" %}
-{% set version = "0.8.3" %}
+{% set version = "0.9.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz
-  sha256: ee66725931562ef137ab277a2b284b5ba11cccc6151aaf59f7ddf2f1e9ed2681
+  sha256: 499b02f3c8ba25470a3cb266dd8d47331652b78835fe8bacc2d50cf8a9e22e7a
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
   run:
     - python >={{ python_min }},<3.13
     - dash >=2.16
-    - dash-mantine-components >=0.14.5
+    - dash-mantine-components >=0.14.6
     - dash-iconify
     - dash-ag-grid >=31
     - pandas
