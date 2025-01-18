@@ -1,5 +1,5 @@
 {% set name = "dash-pydantic-form" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz
-  sha256: ac7820c932835236c225fd71db6bc045ad0f70b17a84b5a9291b036247f34881
+  sha256: 0083c47382c6f3a7e9096bdb9aaa88bf6f6a63f66db0bc75c1a814002054e593
 
 build:
   noarch: python
