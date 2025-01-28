@@ -4,7 +4,7 @@
 {% set python_min = "3.10" %}
 
 package:
-  name: dash_pydantic_form_and_utils
+  name: dash-pydantic-form-and-utils
   version: {{ version }}
 
 source:
@@ -21,7 +21,7 @@ outputs:
   - name: {{ name_utils }}
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      script: python3 -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python {{ python_min }}.*
@@ -44,7 +44,7 @@ outputs:
   - name: {{ name }}
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      script: python3 -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python {{ python_min }}.*
