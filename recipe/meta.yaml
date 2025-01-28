@@ -24,8 +24,8 @@ outputs:
     requirements:
       host:
         - python {{ python_min }}.*
-        - setuptools >=67
-        - setuptools-scm >=7.1
+        - hatchling
+        - hatch-vcs
         - pip
       run:
         - python >={{ python_min }},<3.13
@@ -55,8 +55,8 @@ outputs:
     requirements:
       host:
         - python {{ python_min }}.*
-        - setuptools >=67
-        - setuptools-scm >=7.1
+        - hatchling
+        - hatch-vcs
         - pip
       run:
         - python >={{ python_min }},<3.13
