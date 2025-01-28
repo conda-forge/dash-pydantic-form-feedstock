@@ -50,28 +50,28 @@ outputs:
         - python ={{ python_min }}
         - pip
 
-  - name: {{ name_utils }}
-    build:
-      noarch: python
-      script: pip install . -vv --no-deps
-    requirements:
-      host:
-        - python {{ python_min }}.*
-        - hatchling
-        - hatch-vcs
-        - pip
-      run:
-        - python >={{ python_min }},<3.13
-        - pydantic ==2.*
+  # - name: {{ name_utils }}
+  #   build:
+  #     noarch: python
+  #     script: pip install . -vv --no-deps
+  #   requirements:
+  #     host:
+  #       - python {{ python_min }}.*
+  #       - hatchling
+  #       - hatch-vcs
+  #       - pip
+  #     run:
+  #       - python >={{ python_min }},<3.13
+  #       - pydantic ==2.*
 
-    test:
-      imports:
-        - dash_pydantic_utils
-      commands:
-        - pip check
-      requires:
-        - python ={{ python_min }}
-        - pip
+  #   test:
+  #     imports:
+  #       - dash_pydantic_utils
+  #     commands:
+  #       - pip check
+  #     requires:
+  #       - python ={{ python_min }}
+  #       - pip
 
 about:
   home: https://pydf-docs.onrender.com
