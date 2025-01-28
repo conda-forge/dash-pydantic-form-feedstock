@@ -18,33 +18,9 @@ build:
 
 outputs:
 
-  - name: {{ name_utils }}
-    build:
-      noarch: python
-      script: python3 -m pip install . -vv --no-deps --no-build-isolation
-    requirements:
-      host:
-        - python {{ python_min }}.*
-        - setuptools >=67
-        - setuptools-scm >=7.1
-        - pip
-      run:
-        - python >={{ python_min }},<3.13
-        - pydantic ==2.*
-
-    test:
-      imports:
-        - dash_pydantic_utils
-      commands:
-        - pip check
-      requires:
-        - python ={{ python_min }}
-        - pip
-
   - name: {{ name }}
     build:
       noarch: python
-      script: python3 -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python {{ python_min }}.*
@@ -59,12 +35,36 @@ outputs:
         - dash-ag-grid >=31
         - pydantic ==2.*
         - fsspec
+        - {{ name_utils }} =={{ version }}
         # For some reason the below is not picked up from Dash's deps
         - Werkzeug <3.1
 
     test:
       imports:
         - dash_pydantic_form
+      commands:
+        - pip check
+      requires:
+        - python ={{ python_min }}
+        - pip
+
+  - name: {{ name_utils }}
+    build:
+      noarch: python
+      script: pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python {{ python_min }}.*
+        - setuptools >=67
+        - setuptools-scm >=7.1
+        - pip
+      run:
+        - python >={{ python_min }},<3.13
+        - pydantic ==2.*
+
+    test:
+      imports:
+        - dash_pydantic_utils
       commands:
         - pip check
       requires:
