@@ -21,7 +21,7 @@ outputs:
   - name: {{ name }}
     build:
       noarch: python
-      script: pip install . -vv --no-deps --no-build-isolation
+      script: pip install . -vv --no-deps
     requirements:
       host:
         - python {{ python_min }}.*
@@ -53,7 +53,7 @@ outputs:
   - name: {{ name_utils }}
     build:
       noarch: python
-      script: pip install . -vv --no-deps --no-build-isolation
+      script: pip install . -vv --no-deps
     requirements:
       host:
         - python {{ python_min }}.*
