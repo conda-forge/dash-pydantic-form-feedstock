@@ -21,6 +21,7 @@ outputs:
   - name: {{ name }}
     build:
       noarch: python
+      script: pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python {{ python_min }}.*
@@ -42,6 +43,7 @@ outputs:
     test:
       imports:
         - dash_pydantic_form
+        - dash_pydantic_utils
       commands:
         - pip check
       requires:
