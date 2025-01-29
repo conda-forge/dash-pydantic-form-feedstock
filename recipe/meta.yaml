@@ -62,6 +62,7 @@ outputs:
         - dash-ag-grid >=31
         - pydantic ==2.*
         - fsspec
+        - pandas
         - {{ name_utils }} =={{ version }}
         # For some reason the below is not picked up from Dash's deps
         - Werkzeug <3.1
