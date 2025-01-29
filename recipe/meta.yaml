@@ -24,7 +24,7 @@ outputs:
   - name: {{ name_utils }}
     build:
       noarch: python
-      script: cd utils && pip install . -vv --no-deps --no-build-isolation
+      script: cd utils && pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
     requirements:
       host:
         - python {{ python_min }}.*
@@ -47,6 +47,7 @@ outputs:
   - name: {{ name }}
     build:
       noarch: python
+      script: cd form && pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
     requirements:
       host:
         - python {{ python_min }}.*
@@ -61,14 +62,13 @@ outputs:
         - dash-ag-grid >=31
         - pydantic ==2.*
         - fsspec
-        - {{ pin_subpackage("dash-pydantic-utils", exact=True) }}
+        - {{ name_utils }} =={{ version }}
         # For some reason the below is not picked up from Dash's deps
         - Werkzeug <3.1
 
     test:
       imports:
         - dash_pydantic_form
-        - dash_pydantic_utils
       commands:
         - pip check
       requires:
