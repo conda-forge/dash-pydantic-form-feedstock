@@ -80,7 +80,7 @@ about:
   summary: Create Dash forms from pydantic objects
   dev_url: https://github.com/RenaudLN/dash-pydantic-form
   license: MIT
-  license_file: LICENSE
+  license_file: utils/LICENSE
 
 extra:
   feedstock-name: {{ name }}
