@@ -61,7 +61,7 @@ outputs:
         - dash-ag-grid >=31
         - pydantic ==2.*
         - fsspec
-        - {{ pin_subpackage(dash-pydantic-utils, exact=True) }}
+        - {{ pin_subpackage("dash-pydantic-utils", exact=True) }}
         # For some reason the below is not picked up from Dash's deps
         - Werkzeug <3.1
 
