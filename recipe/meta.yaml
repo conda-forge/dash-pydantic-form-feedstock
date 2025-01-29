@@ -14,9 +14,32 @@ source:
     sha256: 79d6d36898167e7537c521a251dc32a99103b4bc2d4ebbf9d96fab7833c7be1b
 
 build:
-  number: 1
+  number: 0
 
 outputs:
+
+  - name: {{ name_utils }}
+    build:
+      noarch: python
+      script: pip install . -vv --no-deps
+    requirements:
+      host:
+        - python {{ python_min }}.*
+        - hatchling
+        - hatch-vcs
+        - pip
+      run:
+        - python >={{ python_min }},<3.13
+        - pydantic ==2.*
+
+    test:
+      imports:
+        - dash_pydantic_utils
+      commands:
+        - pip check
+      requires:
+        - python ={{ python_min }}
+        - pip
 
   - name: {{ name }}
     build:
@@ -36,7 +59,7 @@ outputs:
         - dash-ag-grid >=31
         - pydantic ==2.*
         - fsspec
-        - {{ name_utils }} =={{ version }}
+        - {{ pin_subpackage({{ name_utils }}, exact=True) }}
         # For some reason the below is not picked up from Dash's deps
         - Werkzeug <3.1
 
@@ -49,29 +72,6 @@ outputs:
       requires:
         - python ={{ python_min }}
         - pip
-
-  # - name: {{ name_utils }}
-  #   build:
-  #     noarch: python
-  #     script: pip install . -vv --no-deps
-  #   requirements:
-  #     host:
-  #       - python {{ python_min }}.*
-  #       - hatchling
-  #       - hatch-vcs
-  #       - pip
-  #     run:
-  #       - python >={{ python_min }},<3.13
-  #       - pydantic ==2.*
-
-  #   test:
-  #     imports:
-  #       - dash_pydantic_utils
-  #     commands:
-  #       - pip check
-  #     requires:
-  #       - python ={{ python_min }}
-  #       - pip
 
 about:
   home: https://pydf-docs.onrender.com
