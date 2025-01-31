@@ -1,5 +1,5 @@
-About dash_pydantic_form_and_utils-feedstock
-============================================
+About dash-pydantic-form-feedstock
+==================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dash-pydantic-form-feedstock/blob/main/LICENSE.txt)
 
@@ -32,10 +32,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dash--pydantic--form-green.svg)](https://anaconda.org/conda-forge/dash-pydantic-form) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dash-pydantic-form.svg)](https://anaconda.org/conda-forge/dash-pydantic-form) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dash-pydantic-form.svg)](https://anaconda.org/conda-forge/dash-pydantic-form) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dash-pydantic-form.svg)](https://anaconda.org/conda-forge/dash-pydantic-form) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dash--pydantic--utils-green.svg)](https://anaconda.org/conda-forge/dash-pydantic-utils) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dash-pydantic-utils.svg)](https://anaconda.org/conda-forge/dash-pydantic-utils) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dash-pydantic-utils.svg)](https://anaconda.org/conda-forge/dash-pydantic-utils) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dash-pydantic-utils.svg)](https://anaconda.org/conda-forge/dash-pydantic-utils) |
 
-Installing dash_pydantic_form_and_utils
-=======================================
+Installing dash-pydantic-form
+=============================
 
-Installing `dash_pydantic_form_and_utils` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `dash-pydantic-form` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -121,17 +121,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating dash_pydantic_form_and_utils-feedstock
-===============================================
+Updating dash-pydantic-form-feedstock
+=====================================
 
-If you would like to improve the dash_pydantic_form_and_utils recipe or build a new
+If you would like to improve the dash-pydantic-form recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/dash_pydantic_form_and_utils-feedstock are
+Note that all branches in the conda-forge/dash-pydantic-form-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
