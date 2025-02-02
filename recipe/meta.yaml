@@ -1,6 +1,6 @@
 {% set name = "dash-pydantic-form" %}
 {% set name_utils = "dash-pydantic-utils" %}
-{% set version = "0.14.2" %}
+{% set version = "0.14.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -10,10 +10,10 @@ package:
 source:
   - folder: form
     url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz
-    sha256: a532330100c593f1bfa236b9ebca8198b470db1c763ffd15d1c405926efafb1d
+    sha256: 03ed3eb21db4171f6e5ae54e9a8f3aa866f2db8846bf1a7904c747d65f82e342
   - folder: utils
     url: https://pypi.org/packages/source/{{ name_utils[0] }}/{{ name_utils }}/dash_pydantic_utils-{{ version }}.tar.gz
-    sha256: 8deb83647e085de2223166ea9586689cc8f93487b44752e0032a27220b9b63b8
+    sha256: f48078c9981907ab79bd978d918d4dd39401dcdb380ad80e90d89eaf3f6c0abf
 
 build:
   noarch: python
@@ -62,7 +62,6 @@ outputs:
         - dash-ag-grid >=31
         - pydantic ==2.*
         - fsspec
-        - pandas
         - {{ name_utils }} =={{ version }}
         # For some reason the below is not picked up from Dash's deps
         - Werkzeug <3.1
