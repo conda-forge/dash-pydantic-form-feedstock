@@ -1,6 +1,6 @@
 {% set name = "dash-pydantic-form" %}
 {% set name_utils = "dash-pydantic-utils" %}
-{% set version = "0.14.9" %}
+{% set version = "0.15.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -10,10 +10,10 @@ package:
 source:
   - folder: form
     url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz
-    sha256: 4e23c6fcb9774d9e91fd25d3fdb40a63efe3f4b114662b9b924b76ea67b1d7d7
+    sha256: 2c27656ed9f8202feb4d1a89a05008782c47738282191e47b94a3773cafb202a
   - folder: utils
     url: https://pypi.org/packages/source/{{ name_utils[0] }}/{{ name_utils }}/dash_pydantic_utils-{{ version }}.tar.gz
-    sha256: f9230893d5e44a16f2c39a84b1d30956a631c6578ea917d1bee53927b1c77e75
+    sha256: db6be6864fc23c78a99e47671591f395f42ee75502304a04b32cde04ce86735b
 
 build:
   noarch: python
@@ -32,7 +32,7 @@ outputs:
         - hatch-vcs
         - pip
       run:
-        - python >={{ python_min }},<3.13
+        - python >={{ python_min }},<3.14
         - pydantic ==2.*
 
     test:
@@ -55,9 +55,9 @@ outputs:
         - hatch-vcs
         - pip
       run:
-        - python >={{ python_min }},<3.13
-        - dash >=2.16
-        - dash-mantine-components >=0.14.6,<0.16
+        - python >={{ python_min }},<3.14
+        - dash >=2.16,<4
+        - dash-mantine-components >=0.14.6,<1.2
         - dash-iconify
         - dash-ag-grid >=31
         - pydantic ==2.*
