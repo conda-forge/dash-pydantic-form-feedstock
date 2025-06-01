@@ -1,6 +1,6 @@
 {% set name = "dash-pydantic-form" %}
 {% set name_utils = "dash-pydantic-utils" %}
-{% set version = "0.16.0" %}
+{% set version = "0.16.1" %}
 {% set python_min = "3.10" %}
 
 package:
