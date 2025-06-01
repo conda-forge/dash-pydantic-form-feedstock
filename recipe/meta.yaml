@@ -10,10 +10,10 @@ package:
 source:
   - folder: form
     url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz
-    sha256: 5faeedbbf2c8d21dfc7e21f41f2505136333fc84470533a76773962f55fb952c
+    sha256: f9ac0756e1398cdb52f76e9d3fc7445aeca0ea9134a3f901cb82155ab1e8cc53
   - folder: utils
     url: https://pypi.org/packages/source/{{ name_utils[0] }}/{{ name_utils }}/dash_pydantic_utils-{{ version }}.tar.gz
-    sha256: 0d74e8bb4cbe6b60099e9b28fa59cf27363e861db3df6fa85a582fe928844492
+    sha256: aa0c76a88680b6e23c832704e87dcaae6890961e8884e949fa2296f56594a90b
 
 build:
   noarch: python
@@ -57,7 +57,7 @@ outputs:
       run:
         - python >={{ python_min }},<3.14
         - dash >=2.16,<4
-        - dash-mantine-components >=0.14.6,<1.2
+        - dash-mantine-components >=0.14.6,<2
         - dash-iconify
         - dash-ag-grid >=31
         - pydantic ==2.*
