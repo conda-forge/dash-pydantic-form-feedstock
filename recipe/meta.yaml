@@ -56,7 +56,7 @@ outputs:
         - pip
       run:
         - python >={{ python_min }},<3.14
-        - dash >=2.16,<4
+        - dash >=2.16,<5
         - dash-mantine-components >=0.15,<3
         - dash-iconify
         - dash-ag-grid >=31
